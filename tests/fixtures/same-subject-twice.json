@@ -1,0 +1,34 @@
+{
+  "id": "same-subject-twice",
+  "title": "Две пары одного предмета",
+  "description": "Одинаковое название в один день при разном времени остаётся двумя занятиями.",
+  "sourceKey": "mock:group-a",
+  "parserVersion": "mock-1.0.0",
+  "timeZone": "Europe/Moscow",
+  "pageState": "ready",
+  "coverage": {
+    "startDate": "2026-10-13",
+    "endDateExclusive": "2026-10-14",
+    "status": "unknown"
+  },
+  "records": [
+    {
+      "title": "История",
+      "date": "2026-10-13",
+      "startTime": "09:00",
+      "endTime": "10:30",
+      "room": "5",
+      "group": "Группа А-1",
+      "lessonType": "лекция"
+    },
+    {
+      "title": "История",
+      "date": "2026-10-13",
+      "startTime": "10:40",
+      "endTime": "12:10",
+      "room": "6",
+      "group": "Группа А-1",
+      "lessonType": "семинар"
+    }
+  ]
+}

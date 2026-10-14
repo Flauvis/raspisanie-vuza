@@ -1,0 +1,48 @@
+{
+  "id": "dst-berlin",
+  "title": "Летнее время",
+  "description": "Зимний и летний сдвиг Europe/Berlin. Пропущенный и повторяющийся час исключаются.",
+  "sourceKey": "mock:group-a",
+  "parserVersion": "mock-1.0.0",
+  "timeZone": "Europe/Berlin",
+  "pageState": "ready",
+  "coverage": {
+    "startDate": "2026-01-01",
+    "endDateExclusive": "2026-11-01",
+    "status": "complete"
+  },
+  "records": [
+    {
+      "sourceLessonId": "winter-1",
+      "title": "Зимняя пара",
+      "date": "2026-01-15",
+      "startTime": "09:00",
+      "endTime": "10:30",
+      "room": "1"
+    },
+    {
+      "sourceLessonId": "summer-1",
+      "title": "Летняя пара",
+      "date": "2026-07-15",
+      "startTime": "09:00",
+      "endTime": "10:30",
+      "room": "2"
+    },
+    {
+      "sourceLessonId": "gap-1",
+      "title": "Пропущенный час",
+      "date": "2026-03-29",
+      "startTime": "02:30",
+      "endTime": "03:30",
+      "room": "3"
+    },
+    {
+      "sourceLessonId": "overlap-1",
+      "title": "Повторяющийся час",
+      "date": "2026-10-25",
+      "startTime": "02:30",
+      "endTime": "03:30",
+      "room": "4"
+    }
+  ]
+}

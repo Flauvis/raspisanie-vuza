@@ -1,0 +1,15 @@
+{
+  "id": "empty-complete",
+  "title": "Пустой полный период",
+  "description": "Период загружен целиком, занятий в нём нет.",
+  "sourceKey": "mock:group-a",
+  "parserVersion": "mock-1.0.0",
+  "timeZone": "Europe/Moscow",
+  "pageState": "ready",
+  "coverage": {
+    "startDate": "2026-10-12",
+    "endDateExclusive": "2026-10-19",
+    "status": "complete"
+  },
+  "records": []
+}

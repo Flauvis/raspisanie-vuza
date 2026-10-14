@@ -1,0 +1,27 @@
+{
+  "id": "missing-room",
+  "title": "Нет аудитории",
+  "description": "Занятие остаётся в снимке, аудитория заменяется предупреждением.",
+  "sourceKey": "mock:group-a",
+  "parserVersion": "mock-1.0.0",
+  "timeZone": "Europe/Moscow",
+  "pageState": "ready",
+  "coverage": {
+    "startDate": "2026-10-13",
+    "endDateExclusive": "2026-10-14",
+    "status": "complete"
+  },
+  "records": [
+    {
+      "sourceLessonId": "room-1",
+      "title": "Физика",
+      "date": "2026-10-13",
+      "startTime": "11:00",
+      "endTime": "12:30",
+      "room": "   ",
+      "teacher": "Преподаватель Д",
+      "group": "Группа А-1",
+      "lessonType": "лекция"
+    }
+  ]
+}

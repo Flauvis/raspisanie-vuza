@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Настройки расписания</title>
+    <script type="module" src="../shared/theme-boot.ts"></script>
+  </head>
+  <body class="page">
+    <div class="wrap">
+      <section class="card">
+        <h1>Настройки</h1>
+        <p class="muted">Часовой пояс задаётся явно и относится к вузу. Пояс компьютера не подставляется.</p>
+        <p id="dev-banner" class="banner" hidden></p>
+        <p id="update-notice" class="banner update-notice" hidden></p>
+        <form id="settings">
+          <label for="timezone">Часовой пояс вуза</label>
+          <input id="timezone" name="timezone" list="zones" placeholder="Например, Europe/Moscow" autocomplete="off" />
+          <datalist id="zones">
+            <option value="Europe/Kaliningrad"></option>
+            <option value="Europe/Moscow"></option>
+            <option value="Europe/Samara"></option>
+            <option value="Asia/Yekaterinburg"></option>
+            <option value="Asia/Omsk"></option>
+            <option value="Asia/Krasnoyarsk"></option>
+            <option value="Asia/Irkutsk"></option>
+            <option value="Asia/Yakutsk"></option>
+            <option value="Asia/Vladivostok"></option>
+            <option value="Asia/Magadan"></option>
+            <option value="Asia/Kamchatka"></option>
+            <option value="Europe/Berlin"></option>
+          </datalist>
+          <label for="group">Название группы</label>
+          <input id="group" name="group" maxlength="80" placeholder="Например, Группа А-1" />
+          <p class="muted">Попадает в колонку «Группа» при следующем чтении. Если сайт сам указал группу, она не заменяется. Если тип пары на сайте не указан, в предпросмотре ставится «оффлайн»; вебинар остаётся вебинаром. Тип пары в Google Calendar не отправляется.</p>
+          <label for="profile">Название профиля</label>
+          <input id="profile" name="profile" maxlength="80" placeholder="Необязательная подпись" />
+          <label for="origin">Origin сайта</label>
+          <input id="origin" name="origin" placeholder="https://example.edu" autocomplete="off" />
+          <p class="muted">Для stud.ibnd.ru достаточно пустого поля: при чтении подставится https://stud.ibnd.ru и пояс Europe/Moscow. Другой сайт нужно указать явно, только https-origin, без пути и пароля.</p>
+          <label for="path">Префикс пути</label>
+          <input id="path" name="path" placeholder="/schedule" autocomplete="off" />
+          <fieldset class="colors">
+            <legend>Тема</legend>
+            <label class="swatch" for="theme-light"><input id="theme-light" name="theme" type="radio" value="light" checked /> Светлая</label>
+            <label class="swatch" for="theme-dark"><input id="theme-dark" name="theme" type="radio" value="dark" /> Тёмная</label>
+            <label class="swatch" for="theme-yellow"><input id="theme-yellow" name="theme" type="radio" value="yellow" /> Тёмная рваная</label>
+          </fieldset>
+          <p class="muted">Светлая и тёмная темы оставляют ту же вёрстку. Тёмная рваная берёт цвета тёмной темы и на этой странице и в предпросмотре показывает рваные карточки. Маленькое окно расширения остаётся ровным.</p>
+          <label class="check" for="open-calendar">
+            <input id="open-calendar" name="open-calendar" type="checkbox" />
+            Открывать календарь после записи пар
+          </label>
+          <p class="muted">Если галочка стоит и настройки сохранены, после успешной записи пар открывается этот календарь в Google.</p>
+          <fieldset class="colors">
+            <legend>Цвет календаря</legend>
+            <div id="calendar-colors" class="swatches"></div>
+          </fieldset>
+          <p class="muted">Цвет задаётся календарю «Расписание вуза» одним запросом. Пары без собственного цвета показывают его сразу. Первое сохранение снимает цвет, который раньше был записан на каждую пару.</p>
+          <div class="actions">
+            <button type="submit">Сохранить</button>
+          </div>
+        </form>
+        <p id="settings-message" class="hint" role="status"></p>
+      </section>
+      <section class="card">
+        <h2>Google Calendar</h2>
+        <p>Скопируйте <code>oauth.public.example.json</code> в <code>oauth.public.json</code>, вставьте публичный client ID и заново соберите расширение. Client secret не нужен и в расширение не кладётся. Пароль Google сюда не вводится.</p>
+        <button type="button" id="google" disabled>Подключить Google</button>
+        <p id="google-message" class="hint">Пока client ID не в сборке, кнопка не запрашивает разрешение. Одна тестовая пара записывается только после отдельного подтверждения на странице предпросмотра.</p>
+        <p class="muted">Удаляет календарь «Расписание вуза», который создало расширение, и все пары в нём. Другие календари не затрагиваются. Если номер календаря уже забыт, кнопка ищет его в Google: удаляется только тот, который вы выбрали. Настройки и разрешение Google остаются.</p>
+        <div id="calendar-candidates" hidden></div>
+        <button type="button" id="delete-calendar" class="danger" disabled>Удалить календарь</button>
+        <p id="delete-message" class="hint" role="status"></p>
+      </section>
+      <section class="card">
+        <h2>Доступ одногруппникам</h2>
+        <p>Доступ других людей включается в Google, не кнопкой в расширении. Почта добавляется и удаляется в Google Auth platform → Audience → Test users. Пароль сюда не вводится.</p>
+        <p class="muted">Пока приложение в режиме Testing, почта вне этого списка получает отказ, даже с копией расширения. У каждого свой Google и свой календарь «Расписание вуза». Удаление почты не удаляет расширение и уже записанные пары: следующий вход Google отклоняет. Чтение по-прежнему только с открытой страницы stud.ibnd.ru.</p>
+        <p class="muted">Если выложена более новая версия, здесь и в маленьком окне появляется кнопка «Скачать». Архив распаковывается поверх уже загруженной папки, затем на chrome://extensions нажимается «Обновить» у той же карточки.</p>
+      </section>
+      <section class="card">
+        <h2>Локальные данные</h2>
+        <p>Кнопка удаляет настройки и последний снимок из хранилища расширения. Номер календаря «Расписание вуза» она сохраняет. Сам календарь Google она не удаляет и выданное Google разрешение не отзывает.</p>
+        <button type="button" id="clear" class="secondary">Очистить локальные данные</button>
+        <p id="clear-message" class="hint" role="status"></p>
+      </section>
+    </div>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "id": "html-title",
+  "title": "Текст с HTML",
+  "description": "Название содержит разметку и должно остаться текстом.",
+  "sourceKey": "mock:group-a",
+  "parserVersion": "mock-1.0.0",
+  "timeZone": "Europe/Moscow",
+  "pageState": "ready",
+  "coverage": {
+    "startDate": "2026-10-13",
+    "endDateExclusive": "2026-10-14",
+    "status": "complete"
+  },
+  "records": [
+    {
+      "sourceLessonId": "html-1",
+      "title": "<img src=x onerror=alert(1)>Дисциплина",
+      "date": "2026-10-13",
+      "startTime": "09:00",
+      "endTime": "10:30",
+      "room": "<b>404</b>",
+      "teacher": "Преподаватель <script>",
+      "group": "Группа А-1",
+      "lessonType": "лекция"
+    }
+  ]
+}

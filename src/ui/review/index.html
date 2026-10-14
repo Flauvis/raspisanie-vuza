@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Предпросмотр расписания</title>
+    <script type="module" src="../shared/theme-boot.ts"></script>
+  </head>
+  <body class="page">
+    <div class="wrap">
+      <header class="card">
+        <h1>Предпросмотр расписания</h1>
+        <p class="muted">Здесь видно последнее чтение и тестовые наборы. Можно записать пары снимка. Пропавшие из полного снимка пары удаляются только отдельным подтверждением.</p>
+        <p id="dev-banner" class="banner" hidden></p>
+        <p id="update-notice" class="banner update-notice" hidden></p>
+        <label for="fixture">Тестовый набор</label>
+        <select id="fixture"></select>
+        <p id="fixture-description" class="muted"></p>
+      </header>
+      <section class="card" id="result" aria-live="polite"></section>
+      <section class="card">
+        <h2>Действия с календарём</h2>
+        <div class="actions">
+          <button type="button" id="compare" disabled>Показать тестовую запись</button>
+          <button type="button" id="confirm" disabled>Подтвердить одну пару</button>
+          <button type="button" id="create-calendar" class="secondary" disabled>Создать новый календарь и одну пару</button>
+          <button type="button" id="sync-compare" disabled>Сравнить все пары</button>
+          <button type="button" id="sync-confirm" disabled>Записать изменения</button>
+          <button type="button" id="cancel-confirm" class="danger" disabled>Подтвердить отмены</button>
+        </div>
+        <div id="calendar-choices"></div>
+        <p id="write-hint" class="hint">Без подтверждения запросы в Google не отправляются.</p>
+      </section>
+    </div>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

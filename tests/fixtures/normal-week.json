@@ -1,0 +1,74 @@
+{
+  "id": "normal-week",
+  "title": "Обычная неделя",
+  "description": "Пять занятий со стабильными ID. У одной пары аудитория отсутствует.",
+  "sourceKey": "mock:group-a",
+  "parserVersion": "mock-1.0.0",
+  "timeZone": "Europe/Moscow",
+  "pageState": "ready",
+  "coverage": {
+    "startDate": "2026-10-12",
+    "endDateExclusive": "2026-10-19",
+    "status": "complete"
+  },
+  "records": [
+    {
+      "sourceLessonId": "mock-1",
+      "title": "Математический анализ",
+      "date": "2026-10-12",
+      "startTime": "09:00",
+      "endTime": "10:30",
+      "room": "301",
+      "teacher": "Преподаватель А",
+      "group": "Группа А-1",
+      "lessonType": "лекция",
+      "building": "Корпус 1"
+    },
+    {
+      "sourceLessonId": "mock-2",
+      "title": "Математический анализ",
+      "date": "2026-10-12",
+      "startTime": "10:40",
+      "endTime": "12:10",
+      "room": "301",
+      "teacher": "Преподаватель А",
+      "group": "Группа А-1",
+      "lessonType": "практика",
+      "building": "Корпус 1"
+    },
+    {
+      "sourceLessonId": "mock-3",
+      "title": "Базы данных",
+      "date": "2026-10-13",
+      "startTime": "13:00",
+      "endTime": "14:30",
+      "teacher": "Преподаватель Б",
+      "group": "Группа А-1",
+      "lessonType": "лекция",
+      "building": "Корпус 1"
+    },
+    {
+      "sourceLessonId": "mock-4",
+      "title": "Алгоритмы",
+      "date": "2026-10-14",
+      "startTime": "09:00",
+      "endTime": "10:30",
+      "room": "210",
+      "teacher": "Преподаватель В",
+      "group": "Группа А-1",
+      "lessonType": "лабораторная",
+      "building": "Корпус 2"
+    },
+    {
+      "sourceLessonId": "mock-5",
+      "title": "Английский язык",
+      "date": "2026-10-16",
+      "startTime": "15:00",
+      "endTime": "16:30",
+      "room": "12",
+      "teacher": "Преподаватель Г",
+      "group": "Группа А-1",
+      "lessonType": "практика"
+    }
+  ]
+}

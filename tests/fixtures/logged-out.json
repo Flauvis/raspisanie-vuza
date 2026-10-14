@@ -1,0 +1,24 @@
+{
+  "id": "logged-out",
+  "title": "Выход из кабинета",
+  "description": "Страница сессии закрыта. Записи на ней не считаются расписанием.",
+  "sourceKey": "mock:group-a",
+  "parserVersion": "mock-1.0.0",
+  "timeZone": "Europe/Moscow",
+  "pageState": "logged_out",
+  "coverage": {
+    "startDate": "2026-10-12",
+    "endDateExclusive": "2026-10-19",
+    "status": "complete"
+  },
+  "records": [
+    {
+      "sourceLessonId": "ignored-1",
+      "title": "Игнорируемая пара",
+      "date": "2026-10-13",
+      "startTime": "09:00",
+      "endTime": "10:30",
+      "room": "101"
+    }
+  ]
+}

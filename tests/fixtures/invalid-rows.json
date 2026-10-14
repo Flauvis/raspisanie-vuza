@@ -1,0 +1,46 @@
+{
+  "id": "invalid-rows",
+  "title": "Ошибочные строки",
+  "description": "Верная пара сохраняется. Строки без названия, без времени и с обратным интервалом исключаются.",
+  "sourceKey": "mock:group-a",
+  "parserVersion": "mock-1.0.0",
+  "timeZone": "Europe/Moscow",
+  "pageState": "ready",
+  "coverage": {
+    "startDate": "2026-10-13",
+    "endDateExclusive": "2026-10-14",
+    "status": "complete"
+  },
+  "records": [
+    {
+      "sourceLessonId": "valid-1",
+      "title": "Верная пара",
+      "date": "2026-10-13",
+      "startTime": "09:00",
+      "endTime": "10:30",
+      "room": "15"
+    },
+    {
+      "sourceLessonId": "bad-title",
+      "title": " ",
+      "date": "2026-10-13",
+      "startTime": "10:40",
+      "endTime": "12:10",
+      "room": "16"
+    },
+    {
+      "sourceLessonId": "bad-range",
+      "title": "Обратный интервал",
+      "date": "2026-10-13",
+      "startTime": "14:00",
+      "endTime": "13:00",
+      "room": "17"
+    },
+    {
+      "sourceLessonId": "bad-time",
+      "title": "Без времени",
+      "date": "2026-10-13",
+      "room": "18"
+    }
+  ]
+}

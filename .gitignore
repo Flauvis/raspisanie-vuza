@@ -1,0 +1,10 @@
+node_modules/
+dist/
+oauth.public.json
+update.public.json
+*.pem
+*.crx
+raspisanie-vuza-*.zip
+release/
+*.log
+.DS_Store

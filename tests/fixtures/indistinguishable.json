@@ -1,0 +1,36 @@
+{
+  "id": "indistinguishable",
+  "title": "Неразличимые записи",
+  "description": "Две полностью одинаковые строки без ID не объединяются и не попадают в снимок.",
+  "sourceKey": "mock:group-a",
+  "parserVersion": "mock-1.0.0",
+  "timeZone": "Europe/Moscow",
+  "pageState": "ready",
+  "coverage": {
+    "startDate": "2026-10-13",
+    "endDateExclusive": "2026-10-14",
+    "status": "complete"
+  },
+  "records": [
+    {
+      "title": "Химия",
+      "date": "2026-10-13",
+      "startTime": "09:00",
+      "endTime": "10:30",
+      "room": "7",
+      "teacher": "Преподаватель Е",
+      "group": "Группа А-1",
+      "lessonType": "лекция"
+    },
+    {
+      "title": "Химия",
+      "date": "2026-10-13",
+      "startTime": "09:00",
+      "endTime": "10:30",
+      "room": "7",
+      "teacher": "Преподаватель Е",
+      "group": "Группа А-1",
+      "lessonType": "лекция"
+    }
+  ]
+}

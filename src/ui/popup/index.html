@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>Расписание вуза</title>
+    <script type="module" src="../shared/theme-boot.ts"></script>
+  </head>
+  <body class="popup">
+    <section class="card">
+      <h1>Расписание вуза</h1>
+      <p class="muted">Чтение страницы вуза и одна тестовая запись в Google только после отдельного подтверждения.</p>
+      <p id="dev-banner" class="banner" hidden></p>
+      <p id="update-notice" class="banner update-notice" hidden></p>
+      <p>Статус: <span id="status" class="chip">Не настроено</span></p>
+      <dl>
+        <dt>Часовой пояс вуза</dt>
+        <dd id="timezone">Не задан</dd>
+        <dt>Сайт</dt>
+        <dd id="origin">Не настроен</dd>
+        <dt>Google</dt>
+        <dd id="google">Не подключено</dd>
+        <dt>Последняя проверка</dt>
+        <dd id="last-check">Ещё не было</dd>
+        <dt>Последняя успешная запись</dt>
+        <dd id="last-write">Ещё не было</dd>
+      </dl>
+      <div class="actions">
+        <button type="button" id="read">Считать расписание</button>
+        <button type="button" id="preview" class="secondary">Открыть предпросмотр</button>
+        <button type="button" id="options" class="secondary">Настройки</button>
+        <button type="button" id="connect" class="secondary" disabled>Подключить Google</button>
+      </div>
+      <p id="message" class="hint" role="status"></p>
+    </section>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

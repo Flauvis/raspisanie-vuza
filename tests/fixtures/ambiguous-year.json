@@ -1,0 +1,32 @@
+{
+  "id": "ambiguous-year",
+  "title": "Неоднозначная дата",
+  "description": "Дата без года не дополняется. Верная строка остаётся.",
+  "sourceKey": "mock:group-a",
+  "parserVersion": "mock-1.0.0",
+  "timeZone": "Europe/Moscow",
+  "pageState": "ready",
+  "coverage": {
+    "startDate": "2026-10-13",
+    "endDateExclusive": "2026-10-14",
+    "status": "complete"
+  },
+  "records": [
+    {
+      "sourceLessonId": "dated-1",
+      "title": "Пара с полной датой",
+      "date": "2026-10-13",
+      "startTime": "09:00",
+      "endTime": "10:30",
+      "room": "20"
+    },
+    {
+      "sourceLessonId": "dated-2",
+      "title": "Пара без года",
+      "date": "13.10",
+      "startTime": "10:40",
+      "endTime": "12:10",
+      "room": "21"
+    }
+  ]
+}

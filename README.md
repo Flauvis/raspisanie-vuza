@@ -72,7 +72,7 @@ ID расширения зафиксирован публичным ключом
 
 Как отдать копию:
 
-1. Один раз создайте публичный репозиторий GitHub. Скопируйте `update.public.example.json` в `update.public.json` и впишите `owner/name` в поле `repository`. Установите GitHub CLI и выполните `gh auth login`. Этот файл в git не входит.
+1. Репозиторий уже создан: https://github.com/Flauvis/raspisanie-vuza. Файл `update.public.json` на этом компьютере указывает на него и в git не входит. На другом компьютере скопируйте `update.public.example.json` в `update.public.json` и впишите `Flauvis/raspisanie-vuza`. Нужны GitHub CLI и `gh auth login`.
 2. Выполните `npm run share`.
 3. Команда собирает `dist`, записывает `release/raspisanie-vuza.zip` и, если репозиторий указан, публикует выпуск с этим архивом. Пока репозиторий не указан, архив остаётся только на диске: отправьте его вручную.
 4. `oauth.public.json` в архив не входит. Публичный client ID уже записан в `dist/manifest.json` при сборке. В переписку и в документы client ID не копируйте. Приватный `.pem` и `dist.crx` в архив не входят.
